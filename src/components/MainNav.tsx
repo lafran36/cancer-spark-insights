@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Flask, Microscope, TestTube } from "lucide-react";
+import { Beaker, Microscope, TestTube } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const MainNav = () => {
@@ -11,7 +11,7 @@ const MainNav = () => {
     { 
       name: "Dashboard", 
       path: "/", 
-      icon: <Flask className="h-5 w-5 mr-2" /> 
+      icon: <Beaker className="h-5 w-5 mr-2" /> 
     },
     { 
       name: "Research Areas", 
