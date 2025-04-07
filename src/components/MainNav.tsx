@@ -26,15 +26,15 @@ const MainNav = () => {
   ];
 
   return (
-    <nav className="flex space-x-4 border-b border-border pb-4">
+    <nav className="flex space-x-2 overflow-x-auto pb-4">
       {navItems.map((item) => (
         <Link
           key={item.path}
           to={item.path}
           className={cn(
-            "flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors",
+            "flex items-center px-4 py-2 text-sm font-medium rounded-full transition-all duration-200",
             location.pathname === item.path
-              ? "bg-primary text-white"
+              ? "bg-gradient-to-r from-medical-blue to-medical-teal text-white shadow-md"
               : "text-muted-foreground hover:text-primary hover:bg-muted"
           )}
         >
