@@ -1,6 +1,6 @@
 
 import React from "react";
-import { ArrowUpIcon, ArrowDownIcon } from "lucide-react";
+import { ArrowUpIcon, ArrowDownIcon, Zap } from "lucide-react";
 import { keyStatistics } from "@/data/cancerData";
 import { Progress } from "@/components/ui/progress";
 
@@ -24,9 +24,18 @@ const KeyStatistics = () => {
       {keyStatistics.map((stat, index) => (
         <div 
           key={index} 
-          className="bg-white rounded-xl shadow-md p-5 transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] border-l-4 border-medical-blue"
+          className="bg-white/80 backdrop-blur-md rounded-xl shadow-md p-5 transition-all duration-300 
+                    hover:shadow-lg hover:translate-y-[-4px] border-l-4 border-medical-blue
+                    animate-fade-in relative overflow-hidden"
+          style={{ animationDelay: `${index * 100}ms` }}
         >
-          <h3 className="text-sm font-medium text-muted-foreground">{stat.title}</h3>
+          <div className="absolute -right-4 -top-4 opacity-10">
+            <Zap className="h-20 w-20 text-medical-blue" />
+          </div>
+          
+          <h3 className="text-sm font-medium text-muted-foreground flex items-center">
+            {stat.title}
+          </h3>
           <div className="mt-2 flex items-baseline">
             <p className="text-3xl font-bold bg-gradient-to-r from-medical-blue to-medical-purple bg-clip-text text-transparent">
               {stat.value}
@@ -43,7 +52,11 @@ const KeyStatistics = () => {
             </span>
           </div>
           <div className="mt-2">
-            <Progress value={getProgressValue(stat)} className="h-2" />
+            <Progress 
+              value={getProgressValue(stat)} 
+              className="h-2" 
+              indicatorClassName="bg-gradient-to-r from-medical-blue to-medical-teal animate-pulse" 
+            />
           </div>
         </div>
       ))}
