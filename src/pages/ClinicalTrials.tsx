@@ -121,7 +121,7 @@ const ClinicalTrials = () => {
                   <SelectValue placeholder="All Phases" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Phases</SelectItem>
+                  <SelectItem value="all">All Phases</SelectItem>
                   <SelectItem value="Phase 1">Phase 1</SelectItem>
                   <SelectItem value="Phase 2">Phase 2</SelectItem>
                   <SelectItem value="Phase 3">Phase 3</SelectItem>
